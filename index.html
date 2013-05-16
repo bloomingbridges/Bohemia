@@ -17,8 +17,6 @@
 	</head>
 	<body>
 
-		<header><h1>Lamp</h1></header>
-
 		<section id="container">
 
 			<section id="welcome" class="wall">
@@ -44,6 +42,11 @@
 					</div>
 				</div>
 
+			</section>
+
+			<section class="wall">
+				<div class="unityPlayer">
+				</div>
 			</section>
 
 		</section>
@@ -74,10 +77,10 @@
 			var u = new UnityObject2(config);
 
 			jQuery(function() {
-				$.each($('.wall'), function(index, value) {
-					$('.wall').eq(index).css('left', (index * window.innerWidth) + "px");
-				});
 
+				hangUpArt();
+
+				/*
 				$('#next a').on('click', function() {
 					$('#container').css('left', -window.innerWidth);
 				});
@@ -85,7 +88,7 @@
 				$('#previous a').on('click', function() {
 					$('#container').css('left', 0);
 				});
-
+				*/
 				
 				var $missingScreen = jQuery("#unityPlayer").find(".missing");
 				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
@@ -95,6 +98,14 @@
 				u.initPlugin(jQuery(".unityPlayer")[0], "../games/forest.unity3d");
 
 			});
+
+			function hangUpArt() {
+				var walls = $('.wall');
+				$.each(walls, function(index, value) {
+					walls.eq(index).css('left', (index * window.innerWidth) + "px");
+					$('footer').css('width', (walls.length * 100) + "%");
+				});
+			}
 
 		</script>
 		
