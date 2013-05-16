@@ -1,0 +1,47 @@
+
+body {
+	font-family: "Helvetica", "Verdana", "Arial", sans-serif;
+	background-color: #eee;
+	color: #403D36;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+}
+
+a:link, a:visited {
+	color: #292929;
+	text-decoration: none;
+	font-weight: bold;
+}
+
+a:active, a:hover {
+	color: #887491;
+}
+
+section#container {
+	margin: auto;
+	width: 960px;
+	background-color: #47FFC2;
+	/*border-right: 1px solid #47FFC2;*/
+}
+
+footer {
+	font-size: small;
+	margin: 1em 0px 0px 0px;
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(80%,#eeeeee), color-stop(100%,#e0e0e0));
+}
+
+#floor {
+	color: rgba(100,80,60,0.8);
+	font-size: 18px;
+	background: #cdb192 url(../images/floor_tile.png) repeat left top;
+	background-size: 42px 42px;
+	-webkit-transform: rotateX(45deg);
+	height: 300px;
+	padding-top: 48px;
+	position: relative;
+	top: -1.5em;
+}
