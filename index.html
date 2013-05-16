@@ -4,6 +4,14 @@
 		<meta charset="utf-8">
 		<title>Bohemia</title>
 		<script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js'></script>
+		<script type="text/javascript">
+		<!--
+		var unityObjectUrl = "http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject2.js";
+		if (document.location.protocol == 'https:')
+			unityObjectUrl = unityObjectUrl.replace("http://", "https://ssl-");
+		document.write('<script type="text\/javascript" src="' + unityObjectUrl + '"><\/script>');
+		-->
+		</script>
 		<link rel="stylesheet" href="css/main.css" />
 		<link rel="stylesheet" href="css/unity.css" />
 	</head>
@@ -15,8 +23,10 @@
 
 			<section id="welcome" class="wall">
 				<h1>Bohemia</h1>
-				<h2>An explorable exhibition generator for Unity3D-based artwork, written in NodeJS</h2>
-				<p>blargh</p>
+				<h2>An pop-up exhibition generator for Unity3D-based artwork, written in NodeJS and fancy CSS</h2>
+				<p>Literally incididunt exercitation, +1 bushwick ethical four loko readymade artisan church-key letterpress qui laboris. Nihil enim cliche ex. Farm-to-table dolor est quinoa accusamus, tonx pinterest trust fund consectetur dolore semiotics. Put a bird on it umami cosby sweater, fap mumblecore iphone cred you probably haven't heard of them literally assumenda yr pour-over terry richardson fanny pack etsy. Literally yr fashion axe high life. Sartorial cred skateboard, thundercats nostrud tonx chambray pickled readymade tofu lo-fi. Vero leggings esse, helvetica trust fund chillwave williamsburg mollit officia banksy church-key ex fanny pack.</p>
+
+				<p>Qui butcher semiotics cupidatat pariatur sapiente. Street art selfies sapiente, salvia etsy ex trust fund aliquip banjo kale chips excepteur ut small batch before they sold out banksy. Direct trade non portland, shoreditch cred viral flannel meh single-origin coffee sapiente proident. Pour-over bushwick quis mollit meh, exercitation dreamcatcher. Bespoke whatever excepteur pug, tofu sustainable sunt duis. YOLO assumenda banh mi tumblr VHS intelligentsia. Plaid dolor skateboard incididunt deep v.</p>
 			</section>
 
 			<section class="wall">
@@ -55,6 +65,14 @@
 
 		<script type="text/javascript">
 
+			var config = {
+				width: 960, 
+				height: 600,
+				params: { enableDebugging:"0" }
+				
+			};
+			var u = new UnityObject2(config);
+
 			jQuery(function() {
 				$.each($('.wall'), function(index, value) {
 					$('.wall').eq(index).css('left', (index * window.innerWidth) + "px");
@@ -67,6 +85,14 @@
 				$('#previous a').on('click', function() {
 					$('#container').css('left', 0);
 				});
+
+				
+				var $missingScreen = jQuery("#unityPlayer").find(".missing");
+				var $brokenScreen = jQuery("#unityPlayer").find(".broken");
+				$missingScreen.hide();
+				$brokenScreen.hide();
+
+				u.initPlugin(jQuery(".unityPlayer")[0], "../games/forest.unity3d");
 
 			});
 

@@ -34,7 +34,7 @@ section#container {
 
 #container section.wall {
 	width: 960px;
-	border: 1px dashed #47FFC2;
+	/*border: 1px dashed #47FFC2;*/
 	position: absolute;
 	top: 0;
 }
@@ -42,6 +42,13 @@ section#container {
 #welcome {
 	height: 600px;
 	background: transparent url(../images/socket.png) no-repeat left bottom;
+}
+
+#welcome p {
+	width: 840px;
+	line-height: 1.5em;
+	margin: 1em auto;
+	text-align: justify;
 }
 
 #previous, #next {
