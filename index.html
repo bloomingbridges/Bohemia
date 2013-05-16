@@ -9,28 +9,68 @@
 	</head>
 	<body>
 
-		<header><h1>Bohemia</h1></header>
+		<header><h1>Lamp</h1></header>
 
 		<section id="container">
-			<div id="unityPlayer">
-				<div class="missing">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
-						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
-					</a>
+
+			<section id="welcome" class="wall">
+				<h1>Bohemia</h1>
+				<h2>An explorable exhibition generator for Unity3D-based artwork, written in NodeJS</h2>
+				<p>blargh</p>
+			</section>
+
+			<section class="wall">
+
+				<div class="unityPlayer">
+					<div class="missing">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+							<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+						</a>
+					</div>
+					<div class="broken">
+						<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
+							<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
+						</a>
+					</div>
 				</div>
-				<div class="broken">
-					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now! Restart your browser after install.">
-						<img alt="Unity Web Player. Install now! Restart your browser after install." src="http://webplayer.unity3d.com/installation/getunityrestart.png" width="193" height="63" />
-					</a>
-				</div>
-			</div>
+
+			</section>
+
+		</section>
+
+		<section id="previous">
+			<a href="#previous">previous</a>
+		</section>
+
+		<section id="next">
+			<a href="#next">next</a>
 		</section>
 
 		<footer>
-			
-			<p>Source on <a href="http://github.com/bloomingbridges/Bohemia">GitHub</a></p>
-			<div id="floor">2013 <a href="http://www.bloomingbridges.co.uk" title="Florian Brueckner">bloomingbridges</a> - based on an idea by <a href="#">Sophie Houlden</a></div>
+			<div id="floor">
+				<p>2013 <a href="http://www.bloomingbridges.co.uk" title="Florian Brueckner">bloomingbridges</a> - based on an idea by <a href="#">Sophie Houlden</a></p>
+				<p>Source on <a href="http://github.com/bloomingbridges/Bohemia">GitHub</a></p>
+			</div>
 		</footer>
+
+		<script type="text/javascript">
+
+			jQuery(function() {
+				$.each($('.wall'), function(index, value) {
+					$('.wall').eq(index).css('left', (index * window.innerWidth) + "px");
+				});
+
+				$('#next a').on('click', function() {
+					$('#container').css('left', -window.innerWidth);
+				});
+
+				$('#previous a').on('click', function() {
+					$('#container').css('left', 0);
+				});
+
+			});
+
+		</script>
 		
 	</body>
 </html>

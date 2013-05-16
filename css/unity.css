@@ -18,7 +18,7 @@ div.missing img {
 div.broken {
 	display: none;
 }
-div#unityPlayer {
+div.unityPlayer {
 	cursor: default;
 	height: 600px;
 	width: 960px;
