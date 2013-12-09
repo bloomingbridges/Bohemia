@@ -1,6 +1,6 @@
 # Bohemia
 
-## Creates virtual gallery spaces for Unity3D-based artwork
+## Virtual gallery spaces for Unity3D-based artwork
 
 ![Screenshot](http://drop.lostwith.us/hanebouken/bohemia_screen.png)
 
